@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-post-page',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
