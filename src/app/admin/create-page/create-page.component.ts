@@ -8,7 +8,7 @@ import {Post} from '../../shared/interfaces';
   styleUrls: ['./create-page.component.scss']
 })
 export class CreatePageComponent implements OnInit {
-  // @ts-ignore
+
   form: FormGroup;
 
   constructor() {

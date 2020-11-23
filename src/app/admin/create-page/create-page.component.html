@@ -3,7 +3,7 @@
 
   <div
     class="form-control"
-    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+    [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
   >
     <label for="title">Название поста:</label>
     <input id="title" type="text" formControlName="title">
@@ -19,6 +19,7 @@
 
   <div class="form-control">
     <label>Контент поста:</label>
+    <quill-editor formControlName="text"></quill-editor>
   </div>
 
   <div

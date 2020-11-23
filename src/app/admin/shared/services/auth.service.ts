@@ -13,8 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  get token(): string | null {
-    // @ts-ignore
+  get token(): string {
     const expDate = new Date(localStorage.getItem('fb-token-exp'));
     if (new Date() > expDate) {
       this.logout();
@@ -25,12 +24,9 @@ export class AuthService {
 
   login(user: User): Observable<any> {
     user.returnSecureToken = true;
-    // @ts-ignore
     return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, user)
       .pipe(
-        // @ts-ignore
         tap(this.setToken),
-        // @ts-ignore
         catchError(this.handleError.bind(this))
       );
   }
@@ -57,6 +53,7 @@ export class AuthService {
         this.error$.next('Такого email нет');
         break;
     }
+
     return throwError(error);
   }
 
