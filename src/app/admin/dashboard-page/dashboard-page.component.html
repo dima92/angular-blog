@@ -13,11 +13,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let post of posts | searchPosts: searchStr; let idx = index">
-      <td>{{idx + 1}}</td>
-      <td>{{post.author}}</td>
-      <td>{{post.title}}</td>
-      <td>{{post.date | date: 'medium'}}</td>
+    <tr *ngFor="let post of posts | searchPosts:searchStr; let idx = index">
+      <td>{{ idx + 1 }}</td>
+      <td>{{ post.author }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.date | date:'medium' }}</td>
       <td>
         <button
           class="btn btn-link open"
@@ -32,7 +32,7 @@
   </table>
 </div>
 
+
 <ng-template #loading>
   <p class="text-center">Идет загрузка...</p>
 </ng-template>
-
