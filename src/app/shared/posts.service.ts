@@ -11,7 +11,7 @@ export class PostsService {
   }
 
   create(post: Post): Observable<Post> {
-    const observable = this.http.post(`${environment.fbDbUrl}/posts.json `, post)
+    return this.http.post(`${environment.fbDbUrl}/posts.json`, post)
       .pipe(map((response: FbCreateResponse) => {
         return {
           ...post,
@@ -19,6 +19,5 @@ export class PostsService {
           date: new Date(post.date)
         };
       }));
-    return observable;
   }
 }
